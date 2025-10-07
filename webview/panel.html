@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Code Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🤖 Code Assistant</h1>
+    
+      <p>Analyze selected code for hints, fixes, and explanations</p>
+    </header>
+
+    <div class="tabs">
+      <button class="tab-button active" data-tab="hints">Hints</button>
+      <button class="tab-button" data-tab="suggestions">Suggestions</button>
+      <button class="tab-button" data-tab="explanation">Explanation</button>
+      <button class="tab-button" data-tab="cleancode">Clean Code</button>
+      <button class="tab-button" data-tab="solutions">Solutions</button>
+      <button class="tab-button" data-tab="errorfixing">Error Fixing</button>
+    </div>
+
+    <div class="tab-content">
+      <div id="hints" class="tab-panel active">
+        <div class="input-section">
+          <div class="textarea-container">
+            <textarea id="hintsInput" placeholder="Selected code will appear here..."></textarea>
+            <button id="clearHintsBtn" class="clear-btn" title="Clear text">🗑️</button>
+            <div id="hintsCounter" class="char-counter">0 characters</div>
+          </div>
+          <button id="hintsBtn" class="analyze-btn">💡 Get Hints</button>
+        </div>
+        <div id="hintsResult" class="result-section"></div>
+      </div>
+
+      <div id="suggestions" class="tab-panel">
+        <div class="input-section">
+          <div class="textarea-container">
+            <textarea id="suggestionsInput" placeholder="Paste or use selection..."></textarea>
+            <button id="clearSuggestionsBtn" class="clear-btn" title="Clear text">🗑️</button>
+          </div>
+          <button id="suggestionsBtn" class="analyze-btn">💭 Get Suggestions</button>
+        </div>
+        <div id="suggestionsResult" class="result-section"></div>
+      </div>
+
+      <div id="explanation" class="tab-panel">
+        <div class="input-section">
+          <div class="textarea-container">
+            <textarea id="explanationInput" placeholder="Paste or use selection..."></textarea>
+            <button id="clearExplanationBtn" class="clear-btn" title="Clear text">🗑️</button>
+          </div>
+          <button id="explanationBtn" class="analyze-btn">📚 Explain Code</button>
+        </div>
+        <div id="explanationResult" class="result-section"></div>
+      </div>
+
+      <div id="cleancode" class="tab-panel">
+        <div class="input-section">
+          <div class="textarea-container">
+            <textarea id="cleancodeInput" placeholder="Paste or use selection..."></textarea>
+            <button id="clearCleancodeBtn" class="clear-btn" title="Clear text">🗑️</button>
+          </div>
+          <button id="cleancodeBtn" class="analyze-btn">✨ Clean Code</button>
+        </div>
+        <div id="cleancodeResult" class="result-section"></div>
+      </div>
+
+      <div id="solutions" class="tab-panel">
+        <div class="input-section">
+          <div class="textarea-container">
+            <textarea id="solutionsInput" placeholder="Paste or use selection..."></textarea>
+            <button id="clearSolutionsBtn" class="clear-btn" title="Clear text">🗑️</button>
+          </div>
+          <button id="solutionsBtn" class="analyze-btn">🎯 Get Solutions</button>
+        </div>
+        <div id="solutionsResult" class="result-section"></div>
+      </div>
+
+      <div id="errorfixing" class="tab-panel">
+        <div class="input-section">
+          <div class="textarea-container">
+            <textarea id="errorfixingInput" placeholder="Paste or use selection..."></textarea>
+            <button id="clearErrorfixingBtn" class="clear-btn" title="Clear text">🗑️</button>
+          </div>
+          <button id="errorfixingBtn" class="analyze-btn">🐛 Fix Errors</button>
+        </div>
+        <div id="errorfixingResult" class="result-section"></div>
+      </div>
+    </div>
+
+    <div class="loading" id="loading" style="display: none;">
+      <div class="spinner"></div>
+      <p>Analyzing code...</p>
+    </div>
+  </div>
+
+  <script src="webview.js"></script>
+</body>
+</html>
+
+

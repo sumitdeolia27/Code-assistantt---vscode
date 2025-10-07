@@ -1,0 +1,72 @@
+{
+  "name": "code-assistantt",
+  "displayName": "code assistantt",
+  "description": "A simple coding assistant that optimizes and fixes code directly inside VS Code.",
+  "version": "0.0.1",
+  "publisher": "klka",
+  "icon": "webview/icons/apple-touch-icon.png",
+  "engines": {
+    "vscode": "^1.104.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "codeAssistantContainer",
+          "title": "Code Assistant",
+          "icon": "media/download.svg"
+        }
+      ]
+    },
+    "views": {
+      "codeAssistantContainer": [
+        {
+          "id": "codeAssistantView",
+          "name": "Assistant Panel",
+          "icon": "media/download.svg"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "codeAssistant.openUI",
+        "title": "Code Assistant: Open UI"
+      },
+      {
+        "command": "codeAssistant.optimizeSelection",
+        "title": "Code Assistant: Optimize Selection"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "codeAssistant.optimizeSelection",
+        "key": "ctrl+alt+o",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "@types/vscode": "^1.104.0",
+    "@vscode/test-cli": "^0.0.11",
+    "@vscode/test-electron": "^2.5.2",
+    "eslint": "^9.36.0"
+  },
+  "dependencies": {
+    "node-fetch": "^2.6.9"
+  }
+}
+
